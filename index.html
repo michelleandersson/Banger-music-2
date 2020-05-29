@@ -45,7 +45,28 @@
         </div> <!--card-->
         </div><!--top-ten-->
       </div><!--card-column-->
-      <div id="song-search"></div>
+      <div id="song-search">
+        <h2>Song Search</h2>
+        <h3>Search for the name of a song or artist to get the top ten results sorted by popularity</h3>
+        <div id="find-song">
+          <div class="search-container">
+            <input class="input" type="search" placeholder="Search for song title">
+            <button type="submit" class="button cut-corner">Search</button>
+          </div>
+          <div class="card-column" >
+            <div  class="mt-3 ml-3 mr-3">
+              
+              <div class="card" style="width: 18rem;" v-for="findSong in findSongs">
+                <div class="card-body">
+                  <h3 class="card-title">{{findSong.track.track_name}}</h3>
+                  <h4 class="card-subtitle">{{findSong.track.artist_name}}</h4>
+                  <button class="button cut-corner">See Lyrics</button>
+                </div><!--card-body-->
+            </div> <!--card-->
+            </div><!--top-ten-->
+          </div><!--card-column-->
+        </div>
+      </div>
   </main>
   
   <footer class="site-footer">
@@ -58,8 +79,8 @@
       
       <form action="#" class="newsletter-form">
         <h4>Want to get updates about new realses? Sign up for our Newsletter!</h4>
-        <input type="email" placeholder="Enter your email to join newsletter...">
-        <input type="submit" class="button cut-corner" value="Subscribe">
+        <input class="input" type="email" placeholder="Enter your email to join newsletter...">
+        <button type="submit" class="button cut-corner">Subscribe</button>
       </form> <!-- .newsletter-form -->
       
       <div class="social-links">
