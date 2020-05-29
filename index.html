@@ -44,7 +44,7 @@
                 <button @click="modalAction()" class="button cut-corner">View Lyrics</button>
                   <div class="modal-background" v-if="modal">
                     <div class="modal-content">
-                      <h2>{{topSong.track.lyric}}</h2>
+                      <h2>{{topSong.track}}</h2>
                       <p>hey</p>
                       <button @click="modalAction()" class="button cut-corner">close</button>
                     </div>
@@ -60,8 +60,10 @@
         <h3>Search for the name of a song or artist to get the top ten results sorted by popularity</h3>
         <div id="find-song">
           <div class="search-container">
-            <input class="input" type="search" placeholder="Search for song title">
-            <button type="submit" class="button cut-corner">Search</button>
+            <form @submit.prevent="handleSubmit">
+              <input class="search-input" v-model="songSearch" type="text" placeholder="Search for song title" id="search">
+              <button type="submit" class="button cut-corner">Search</button>
+            </form>
           </div>
           <div class="card-column" >
             <div class="mt-3 ml-3 mr-3">

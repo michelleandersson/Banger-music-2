@@ -28,19 +28,25 @@ const app = new Vue({
     data: {
       findSongs: [], 
       //searchResult: , 
+      songSearch: ''
     },
-    method: {
-      searchSong: function() {
-        console.log("button pressed"); 
-      }
-    },
-    // Mounted hook is being called after the app is fully initialized
-    mounted: function() {
-      fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track_artist=cher&page_size=10&page=1&s_track_rating=desc&apikey=e06708be7a728768734c486cd6c6547e`)
+    methods: {
+      handleSubmit: function(){
+        fetch('https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track_artist='+this.songSearch+'&page_size=10&page=1&s_track_rating=desc&apikey=e06708be7a728768734c486cd6c6547e')
       .then(response => response.json())
       .then(findSongsResponce => {
         this.findSongs = findSongsResponce.message.body.track_list; 
       })
-    } 
+
+      }
+    },
+    // Mounted hook is being called after the app is fully initialized
+    /*mounted: function() {
+      fetch('https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track_artist='+this.songSearch+'&page_size=10&page=1&s_track_rating=desc&apikey=e06708be7a728768734c486cd6c6547e')
+      .then(response => response.json())
+      .then(findSongsResponce => {
+        this.findSongs = findSongsResponce.message.body.track_list; 
+      })
+    } */
   }); 
 
