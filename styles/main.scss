@@ -1,3 +1,5 @@
+$accent-color: #fd5927;  
+
 body {
     background-color: #141414;
     color: #848484;
@@ -8,6 +10,10 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
 }
+
+/*************************************************
+HEADER
+*************************************************/
 
 header {
     max-width: 1500px;
@@ -29,6 +35,10 @@ header {
     }
 }
 
+/***************************************
+TOP TEN 
+***************************************/
+
 main {
     .card {
         background-color: rgba(255,255,255,.15);
@@ -38,17 +48,14 @@ main {
         }
         &-subtitle {
             font-size: 15px;
-        }
-    }
-    .btn {
-        background-color:  #fd5927;
-        color: black;
-        margin-top: 10px;
-        &:hover {
-            background-color: #fd592763;
+            margin-bottom: 20px;
         }
     }
 }
+
+/***************************************
+FOOTER
+***************************************/
 
 
 .site-footer {
@@ -59,15 +66,19 @@ main {
     align-items: center;
     flex-direction: row;
     background-color: #191919;
-    margin: 20px 20px;
+    margin: 20px 20px 0;
     .container {
         display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 20px;
     }
-    .address {
+    address {
         text-align: center;
+        a {
+            color: #848484;
+        }
     }
 }
 .newsletter-form{
@@ -94,7 +105,60 @@ main {
         @media screen and (max-width: 480px){ width: 30% }
     }
 }
+
+/*******************************************
+BUTTON
+*******************************************/
+
+.button {
+    display: inline-block;
+	padding: 10px 30px;
+	background-color: #fd5927;
+	border: none;
+	color: white;
+	text-decoration: none;
+	outline: none;
+    transition: .3s ease;
+    &:hover, &:focus {
+        background-color: #fd592763;
+    }
+} 
+
+.cut-corner{
+    background: linear-gradient(0deg, $accent-color, $accent-color) top left,
+                linear-gradient(0deg, $accent-color, $accent-color) top right,
+                linear-gradient(315deg, transparent 10px, $accent-color 0) bottom right,
+                linear-gradient(0deg, $accent-color, $accent-color) bottom left;
+    background-size: 55% 55%;
+    background-repeat: no-repeat;
+    
+    &:hover{
+        background: linear-gradient(0deg, lighten($accent-color,10%), lighten($accent-color,10%)) top left,
+                    linear-gradient(0deg, lighten($accent-color,10%), lighten($accent-color,10%)) top right,
+                    linear-gradient(315deg, transparent 10px, lighten($accent-color,10%) 0) bottom right,
+                    linear-gradient(0deg, lighten($accent-color,10%), lighten($accent-color,10%)) bottom left;
+        background-size: 55% 55%;
+        background-repeat: no-repeat;
+    }
+
+    &:active{
+        background: linear-gradient(0deg, darken($accent-color,15%), darken($accent-color,15%)) top left,
+                    linear-gradient(0deg, darken($accent-color,15%), darken($accent-color,15%)) top right,
+                    linear-gradient(315deg, transparent 10px, darken($accent-color,15%) 0) bottom right,
+                    linear-gradient(0deg, darken($accent-color,15%), darken($accent-color,15%)) bottom left;
+        background-size: 55% 55%;
+        background-repeat: no-repeat;
+    }
+}
+
+/***********************************
+SOCIAL MEDIA
+**********************************/
+
 .social-links{
+    .social-icon {
+        padding-left: 33%;
+    }
     margin: 50px 0;
     a{
         display: inline-block;
@@ -109,7 +173,6 @@ main {
         color: white;
         margin: 0 5px;
         line-height: 45px;
-
         &:hover{
             background: linear-gradient(0, lighten(#353535,10%), lighten(#353535,10%)) top left,
                         linear-gradient(0, lighten(#353535,10%), lighten(#353535,10%)) top right,
@@ -120,6 +183,7 @@ main {
         }
     }
 }
+
 .copy{
     color: #434343;
     font-weight: 300;
