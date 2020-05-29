@@ -29,4 +29,100 @@ header {
     }
 }
 
+main {
+    .card {
+        background-color: rgba(255,255,255,.15);
+        margin-top: 10px;
+        &-title {
+            font-weight: bold;
+        }
+        &-subtitle {
+            font-size: 15px;
+        }
+    }
+    .btn {
+        background-color:  #fd5927;
+        color: black;
+        margin-top: 10px;
+        &:hover {
+            background-color: #fd592763;
+        }
+    }
+}
+
+
+.site-footer {
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #191919;
+    margin: 20px 20px;
+    .container {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+    .address {
+        text-align: center;
+    }
+}
+.newsletter-form{
+    margin: 20px 20px;
+
+    input[type="email"]{
+        width: 80%;
+        padding: 25px;
+        border: none;
+        float: left;
+        background: #353535;
+        color: white;
+        outline: none;
+        transition: .3s ease;
+        @media screen and (max-width: 480px){ width: 70% }
+
+        &:hover,&:focus{
+            background: lighten(#353535,10%)
+        }
+    }
+    input[type="submit"]{
+        width: 20%;
+        padding: 25px;
+        @media screen and (max-width: 480px){ width: 30% }
+    }
+}
+.social-links{
+    margin: 50px 0;
+    a{
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(0, #353535, #353535) top left,
+                    linear-gradient(0, #353535, #353535) top right,
+                    linear-gradient(315deg, transparent 5px, #353535 0) bottom right,
+                    linear-gradient(0, #353535, #353535) bottom left;
+        background-size: 55% 55%;
+        background-repeat: no-repeat;
+        color: white;
+        margin: 0 5px;
+        line-height: 45px;
+
+        &:hover{
+            background: linear-gradient(0, lighten(#353535,10%), lighten(#353535,10%)) top left,
+                        linear-gradient(0, lighten(#353535,10%), lighten(#353535,10%)) top right,
+                        linear-gradient(315deg, transparent 5px, lighten(#353535,10%) 0) bottom right,
+                        linear-gradient(0, lighten(#353535,10%), lighten(#353535,10%)) bottom left;
+            background-size: 55% 55%;
+            background-repeat: no-repeat;
+        }
+    }
+}
+.copy{
+    color: #434343;
+    font-weight: 300;
+}
+
     
