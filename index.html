@@ -40,11 +40,21 @@
             <div class="card-body">
               <h3 class="card-title">{{topSong.track.track_name}}</h3>
               <h4 class="card-subtitle">{{topSong.track.artist_name}}</h4>
-              <button class="button cut-corner">See Lyrics</button>
+              <div id="app">
+                <button @click="modalAction()" class="button cut-corner">View Lyrics</button>
+                <div class="modal-background" v-if="modal">
+                  <div class="modal-content">
+                    <h2>{{topSong.track.lyric}}</h2>
+                    <p>hey</p>
+                    <button @click="modalAction()" class="button cut-corner">close</button>
+                  </div>
+                </div>
+              </div>
             </div><!--card-body-->
         </div> <!--card-->
         </div><!--top-ten-->
       </div><!--card-column-->
+      
       <div id="song-search">
         <h2>Song Search</h2>
         <h3>Search for the name of a song or artist to get the top ten results sorted by popularity</h3>
@@ -54,7 +64,7 @@
             <button type="submit" class="button cut-corner">Search</button>
           </div>
           <div class="card-column" >
-            <div  class="mt-3 ml-3 mr-3">
+            <div class="mt-3 ml-3 mr-3">
               
               <div class="card" style="width: 18rem;" v-for="findSong in findSongs">
                 <div class="card-body">
@@ -63,10 +73,10 @@
                   <button class="button cut-corner">See Lyrics</button>
                 </div><!--card-body-->
             </div> <!--card-->
-            </div><!--top-ten-->
+            </div><!--mt ml mr-->
           </div><!--card-column-->
-        </div>
-      </div>
+        </div><!--find-song-->
+      </div><!--song-search-->
   </main>
   
   <footer class="site-footer">
@@ -93,8 +103,11 @@
       <p class="copy">Copyright 2020 Banger Music. Created by Michelle Andersson.</p>
     </div>
         </footer> <!-- .site-footer -->
+
+        
   <!-- Load Vue.js -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="src/main.js"></script>
+  <script src="src/modal.js"></script>
 </body>
 </html>

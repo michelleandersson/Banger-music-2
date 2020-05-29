@@ -1,7 +1,17 @@
 const app = new Vue({
     el: '#top-ten', 
     data: {
-      topSongs: []
+      topSongs: [], 
+      modal: false 
+    },
+    methods: {
+      modalAction: function() {
+        if(this.modal == false){
+          this.modal = true
+        } else {
+          this.modal = false
+        } 
+      }
     },
     // Mounted hook is being called after the app is fully initialized
     mounted: function() {
@@ -19,6 +29,11 @@ const app = new Vue({
       findSongs: [], 
       //searchResult: , 
     },
+    method: {
+      searchSong: function() {
+        console.log("button pressed"); 
+      }
+    },
     // Mounted hook is being called after the app is fully initialized
     mounted: function() {
       fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track_artist=cher&page_size=10&page=1&s_track_rating=desc&apikey=e06708be7a728768734c486cd6c6547e`)
@@ -28,3 +43,4 @@ const app = new Vue({
       })
     } 
   }); 
+
