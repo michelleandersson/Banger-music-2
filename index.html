@@ -46,8 +46,8 @@
             <div class="card-body">
               <h3 class="card-title">{{topSong.track.track_name}}</h3>
               <h4 class="card-subtitle">By: {{topSong.track.artist_name}}</h4>
-              <div id="app">
-                <button @click="modalAction()" class="button cut-corner">View Lyrics</button>
+              <div id="app" :id="'myModal' +i">
+                <button :data-target="'#myModal' +i" @click="modalAction()" class="button cut-corner">View Lyrics</button>
                   <div class="modal-background" v-if="modal">
                     <div class="modal-content">
                       <h2>{{topSong.track}}</h2>
