@@ -45,10 +45,10 @@ const app = new Vue({
       });
 
       }, 
-      modalAction2: function(song_id) {
+      modalAction2: function(track) {
         if(this.modal2 == false){
           this.modal2 = true; 
-          fetch('https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id='+song_id+'&apikey=e06708be7a728768734c486cd6c6547e')
+          fetch('https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id='+track+'&apikey=e06708be7a728768734c486cd6c6547e')
           .then(response => response.json())
           .then(songLyricsResponce => {
           this.songLyrics = songLyricsResponce.message.body.lyrics}) 
