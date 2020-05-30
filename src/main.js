@@ -2,12 +2,17 @@ const app = new Vue({
     el: '#top-ten', 
     data: {
       topSongs: [], 
-      modal: false 
+      modal: false, 
+      topSongsLyrics: []
     },
     methods: {
-      modalAction: function() {
+      modalAction: function(track_id) {
         if(this.modal == false){
-          this.modal = true
+          this.modal = true; 
+          fetch('https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id='+track_id+'&apikey=e06708be7a728768734c486cd6c6547e')
+          .then(response => response.json())
+          .then(topSongsLyricsResponce => {
+          this.topSongsLyrics = topSongsLyricsResponce.message.body.lyrics}) 
         } else {
           this.modal = false
         } 
@@ -27,7 +32,9 @@ const app = new Vue({
     el: '#find-song', 
     data: {
       findSongs: [], 
-      songSearch: ''
+      songSearch: '', 
+      modal2: false, 
+      songLyrics: []
     },
     methods: {
       handleSubmit: function(){
@@ -35,8 +42,19 @@ const app = new Vue({
       .then(response => response.json())
       .then(findSongsResponce => {
         this.findSongs = findSongsResponce.message.body.track_list; 
-      })
+      });
 
+      }, 
+      modalAction2: function(song_id) {
+        if(this.modal2 == false){
+          this.modal2 = true; 
+          fetch('https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id='+song_id+'&apikey=e06708be7a728768734c486cd6c6547e')
+          .then(response => response.json())
+          .then(songLyricsResponce => {
+          this.songLyrics = songLyricsResponce.message.body.lyrics}) 
+        } else {
+          this.modal2 = false
+        } 
       }
     }
   }); 
