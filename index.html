@@ -60,15 +60,16 @@
         </div> <!--card-->
         </div><!--top-ten-->
       </div><!--card-column-->
+      <div class="border"></div>
       
       <div id="song-search">
         <h2>Song Search</h2>
         <h3>Search for the name of a song or artist to get the top ten results sorted by popularity</h3>
         <div id="find-song">
           <div class="search-container">
-            <form @submit.prevent="handleSubmit">
+            <form class="search-form" @submit.prevent="handleSubmit">
               <input class="search-input" v-model="songSearch" type="text" placeholder="Search for song title or artist name" id="search">
-              <button type="submit" class="button cut-corner">Search</button>
+              <button type="submit" class="submit-button button cut-corner">Search</button>
             </form>
           </div>
           <div class="card-column" >
@@ -85,6 +86,7 @@
           </div><!--card-column-->
         </div><!--find-song-->
       </div><!--song-search-->
+      <div class="border"></div>
   </main>
   
   <footer class="site-footer">
