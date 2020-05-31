@@ -84,15 +84,6 @@ blockquote {
     margin-top: -2px;
 }
 
-.examples {
-    margin-top: 30px;
-    color: rgb(212, 211, 211);;
-}
-
-.examples-text {
-    font-style: italic;
-}
-
 .urban {
     float: right;
     color: rgb(212, 211, 211);
@@ -102,7 +93,14 @@ blockquote {
 /***************************************
 TOP TEN 
 ***************************************/
-
+.main {
+    
+    background-image: url(../images/people2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 main {
     max-width: 1500px;
     width: 100%;
