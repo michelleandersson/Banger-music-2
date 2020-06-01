@@ -51,10 +51,8 @@
           <div id="modal-1">
             <div class="modal-background" v-if="modal">
               <div class="modal-content">
-                <h2><!--{{topSong.track.track_name}}--></h2>
-                <p>Artist: <!--{{topSong.track.artist_name}}--></p>
-                <p>Album: <!--{{topSong.track.album_name}}--></p>
-                <p>Lyrics: {{topSongsLyrics.lyrics_body}}</p>
+                <h2>Lyrics: </h2>
+                <p>{{topSongsLyrics.lyrics_body}}</p>
                 <button @click="modalAction()" class="button cut-corner">close</button>
               </div>
             </div>
@@ -64,6 +62,7 @@
             <div class="card-body">
               <h3 class="card-title">{{topSong.track.track_name}}</h3>
               <h4 class="card-subtitle">By: {{topSong.track.artist_name}}</h4>
+              <h4 class="card-subtitle">Album: {{topSong.track.album_name}}</h4>
               <button @click="modalAction(topSong.track.track_id)" class="button cut-corner">View Lyrics</button>
               
             </div><!--card-body-->
@@ -79,10 +78,8 @@
           <div id="modal-2" >
             <div class="modal-background" v-if="modal2">
               <div class="modal-content">
-                <h2><!--{{topSong.track.track_name}}--></h2>
-                <p>Artist: <!--{{topSong.track.artist_name}}--></p>
-                <p>Album: <!--{{topSong.track.album_name}}--></p>
-                <p>Lyrics: {{songLyrics.lyrics_body}}</p>
+                <h2>Lyrics:</h2>
+                <p>{{songLyrics.lyrics_body}}</p>
                 <button @click="modalAction2()" class="button cut-corner">close</button>
               </div>
             </div>
@@ -99,7 +96,8 @@
               <div class="card" style="width: 18rem;" v-for="findSong in findSongs">
                 <div class="card-body">
                   <h3 class="card-title">{{findSong.track.track_name}}</h3>
-                  <h4 class="card-subtitle">{{findSong.track.artist_name}}</h4>
+                  <h4 class="card-subtitle">By: {{findSong.track.artist_name}}</h4>
+                  <h4 class="card-subtitle">Album: {{findSong.track.album_name}}</h4>
                   <button @click="modalAction2(findSong.track.track_id)" class="button cut-corner">See Lyrics</button>
                 </div><!--card-body-->
             </div> <!--card-->
