@@ -101,6 +101,17 @@ TOP TEN
     background-size: cover;
     background-attachment: fixed;
 }
+
+.top-ten-bg {
+    display: flex;
+    justify-content: center;
+    max-width: 1100px;
+    width: 100%;
+    background-image: url(../images/people2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 main {
     max-width: 1500px;
     width: 100%;
@@ -128,6 +139,7 @@ main {
     
     }
     .card-column {
+        
         @media screen and (min-width:1000px) {
             column-count: 2;
           }
@@ -142,7 +154,8 @@ main {
     .card {
         width: 260px;
         height: 260px;
-        background-color: rgba(255,255,255,.15);
+        //background-color: rgba(255,255,255,.15); //white transparent
+        background-color: rgba(3, 3, 3, 0.70); //black transparent
         margin-top: 15px;
         &-title {
             font-weight: bold;
@@ -238,7 +251,7 @@ FOOTER
 
 
 .site-footer {
-    max-width: 1500px;
+    max-width: 1100px;
     width: 100%;
     display: flex;
     justify-content: center;
