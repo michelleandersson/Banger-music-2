@@ -196,7 +196,9 @@ MODAL
 }
 .modal-content {
     z-index: 99;
-    width: 50%;
+    max-width: 50%;
+    max-height: 80%;
+    overflow: auto;
     background-color: #141414f1;
     position: absolute;
     top: 25%;
