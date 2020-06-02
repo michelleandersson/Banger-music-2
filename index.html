@@ -46,13 +46,13 @@
     
       
       <div id="song-search">
-        <h2>Song Search</h2>
+        <h2 class="song-search-title">Song Search</h2>
         <h3>Search for the name of a song or artist to get the top ten results sorted by popularity</h3>
         <div id="find-song">
           <div id="modal-2" >
             <div class="modal-background" v-if="modal2">
               <div class="modal-content">
-                <h2>Lyrics:</h2>
+                <h2 class="modal-title">Lyrics:</h2>
                 <p>{{songLyrics.lyrics_body}}</p>
                 <button @click="modalAction2()" class="button cut-corner">close</button>
               </div>
@@ -89,7 +89,7 @@
             <div id="modal-1">
               <div class="modal-background" v-if="modal">
                 <div class="modal-content">
-                  <h2>Lyrics: </h2>
+                  <h2 class="modal-title">Lyrics: </h2>
                   <p>{{topSongsLyrics.lyrics_body}}</p>
                   <button @click="modalAction()" class="button cut-corner">close</button>
                 </div>

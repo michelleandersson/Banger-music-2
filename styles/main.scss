@@ -112,6 +112,14 @@ TOP TEN
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.card-title {
+    color: rgb(212, 211, 211);
+    h2 {
+        color: $accent-color;
+    }
+    
+}
 main {
     max-width: 1500px;
     width: 100%;
@@ -194,12 +202,13 @@ MODAL
     position: absolute;
     top: 25%;
     left: 31%;
-    h2 {
-        padding: 20px 40px 20px 40px;
-    }
     p {
         padding: 20px 40px 20px 40px;
     }
+}
+.modal-title {
+        color: rgb(212, 211, 211);
+        padding: 20px 40px 20px 40px;
 }
 
 /***************************************
@@ -213,7 +222,10 @@ SEARCH FOR SONG
     align-items: center;
     flex-direction: column;
     margin: 20px 20px;
-    
+}
+
+.song-search-title {
+    color: $accent-color;
 }
 
 #find-song {
